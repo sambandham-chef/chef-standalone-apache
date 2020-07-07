@@ -3,7 +3,11 @@ package 'httpd' do
 end
 
 file '/var/www/html/index.html' do
-  content '<h1>This is an apache server</h1>'
+  content "This is a centos server 
+  Hostname : #{node['hostname']}
+  IPAddress : #{node['ipaddress']}
+  Memory : #{node['memory']['total']}
+  CPU : #{node['cpu']['0']['total']}"
 end
 
 service 'httpd' do
